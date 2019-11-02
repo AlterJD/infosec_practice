@@ -2,8 +2,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
  
-fromaddr = "ksv98@inbox.ru"
-toaddr = "demonbydeath@mail.ru"
+fromaddr = "demonbydeath@mail.ru"
+toaddr = "ksv98@inbox.ru"
 mypass = "5273925bB"
  
 msg = MIMEMultipart()
