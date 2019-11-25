@@ -64,10 +64,3 @@ print('Зашифрованное сообщение выглядит так: ',
 encrypted = (crypted ** private_key[0]) % private_key[1]
 
 print('Расшифрованное сообщение выглядит так: ', encrypted)
-
-
-
-
-
-
-
