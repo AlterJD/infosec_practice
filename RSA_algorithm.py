@@ -15,7 +15,6 @@ def reverse_prime(n):   #check for exponent
         if (n % i == 0):
             n //= i
             fact_set.add(i)
-    print(fact_set)
     return fact_set
 
 def rev_prime_check(prime_one, prime_two):
@@ -26,13 +25,13 @@ def rev_prime_check(prime_one, prime_two):
     else:
         return False
 
-primes = [i for i in range(1,1000) if isPrime(i)]
+primes = [i for i in range(1,100) if isPrime(i)]
 n_prime = random.choice(primes)
 m_prime = random.choice(primes)
 
 print('''
-Первое простое число: ''' + n_prime + '''
-Второе простое число: ''' + m_prime + '''
+Первое простое число: ''' + str(n_prime) + '''
+Второе простое число: ''' + str(m_prime) + '''
 ''')
 
 modulus = n_prime * m_prime
@@ -47,7 +46,7 @@ public_key = [open_exponent, modulus]
 print('Публичный ключ: ', public_key)
 
 d_list = []
-for i in range(1, 1000):
+for i in range(1, 10000):
     if (i * open_exponent) % eiler_function == 1:
         d_list.append(i)
 
@@ -55,6 +54,19 @@ d_num = random.choice(d_list)
 private_key = [d_num, modulus]
 
 print('Закрытый ключ: ', private_key)
+print('Введите сообщение-число меньше', modulus, '.')
+message = int(input())
+
+crypted = (message ** public_key[0]) % public_key[1]
+
+print('Зашифрованное сообщение выглядит так: ', crypted)
+
+encrypted = (crypted ** private_key[0]) % private_key[1]
+
+print('Расшифрованное сообщение выглядит так: ', encrypted)
+
+
+
 
 
 
